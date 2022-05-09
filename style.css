@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*Hele min body*/
+.wrapper {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  /*Hele min body (minus navigationsmenu)*/
+  #main-area{
+    width:78%;
+  }
+
+  section{
+    padding:30px;
+  }
+
+  
+  
+  /*Header*/
+  #header{
+    width:17%;
+    background:#f3f3f3;
+    position: relative;
+  }
+  
+  /*Boksene i min body*/
+  .drag-container {
+    flex: 0 0 auto;
+    margin: 10px;
+    width: 200px; min-height: 200px;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid black;
+  }
+  
+  /*Billederne man kan trække ind i boksene*/
+  .drag-item {
+    width: 100%; 
+    transition: box-shadow ease-out 350ms;
+  }
+
+
+ /*Min navigationsmenu*/
+  nav ul{
+    list-style: none;
+    text-align: left;
+  }
+  
+ /*Kategorierne i min navigation*/ 
+  nav ul li a{
+ 
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: #000;
+    padding:20px 24px;
+    transition:all .3s;
+  }
+  
+  /*Hover over kategorierne i min navigation*/ 
+  nav ul li a:hover{
+    color:#DB001B; 
+  }
+  
+  nav ul li li a{
+    padding:20px;
+}
+
+
+   /*Pilene i min navigation*/ 
+  nav ul li.has-child > a::before{
+    content:'';
+    position: absolute;
+    right:20px;
+    top:28px;
+    width:6px;
+    height:6px;
+    border-top: 2px solid #999;
+      border-right:2px solid #999;
+      transform: rotate(45deg);
+  }
+  
+
+  
+  nav ul li.has-child img{
+    max-width: 100%;
+    height: auto;
+    transition: all .5s;
+    vertical-align: bottom;
+  }
+  
+
+  nav ul li.has-child img:hover{
+    transform: scale(1.2);
+  }
+  
+  nav ul li.has-child dt{
+    overflow: hidden;
+    height: 15vh;
+    margin:0 0 10px 0;
+  }
+  
+  
+  
+  nav li.has-child ul{
+    position: absolute;
+    top:0;
+    left:100%;
+    z-index: 4;
+    width:100%;
+    background:#888;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s;
+  }
+  
+
+  nav li.has-child:hover > ul{
+    visibility: visible;
+    opacity: 1;
+  }
+  
+
+  nav li.has-child ul li a{
+    color: #fff;
+  }
+  
+
+
+  
+
+
+
+
+ 
+  
+
+
+  
