@@ -7,7 +7,7 @@
 .wrapper {
     margin: 0 auto;
     width: 100%;
-    max-width: 1200px;
+    min-width: 1200px;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
@@ -28,6 +28,15 @@
     padding:30px;
   }
 
+  /*Boksene i min body*/
+  .drag-container {
+    flex: 0 0 auto;
+    margin: 10px;
+    width: 200px; min-height: 200px;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid black;
+  }  
   
   
   /*Header*/
@@ -37,15 +46,7 @@
     position: relative;
   }
   
-  /*Boksene i min body*/
-  .drag-container {
-    flex: 0 0 auto;
-    margin: 10px;
-    width: 200px; min-height: 200px;
-    display: inline-block;
-    padding: 10px;
-    border: 1px solid black;
-  }
+
   
   /*Billederne man kan trække ind i boksene*/
   .drag-item {
