@@ -70,6 +70,7 @@
     color: #000;
     padding:20px 24px;
     transition:all .3s;
+    font-size: 120%;
   }
   
   /*Hover over kategorierne i min navigation*/ 
@@ -142,13 +143,16 @@
   
 
 
-  
+.drag-over{
+  background-color: grey;
+}
 
+@media screen and (min-width: 1500px) {
+    .drag-container {
+      width: 400px; min-height: 400px;
+    }
 
-
-
- 
-  
-
-
-  
+    .nav ul li a{
+      font-size: 200%;
+    }
+  }

@@ -72,6 +72,15 @@ function dragStart(e) {
     }
   }
   
+
+
+
+
+
+
+  //Definerer positionen, hvor det er muligt at placere et item på et target
+
+  //Størrelse af elementer
   function touchEnd(e) {
     var box1 = this.getBoundingClientRect(),
         x1 = box1.left,
@@ -108,6 +117,8 @@ function dragStart(e) {
     x = 1;
   }
   
+
+  // Tilføj drag & drop events til elementer 
   function addEventsDragAndDrop(el) {
     el.addEventListener('dragstart', dragStart, false);
     el.addEventListener('dragend', dragEnd, false);
@@ -115,7 +126,16 @@ function dragStart(e) {
     el.addEventListener('touchmove', touchMove, false);
     el.addEventListener('touchend', touchEnd, false);
   }
+
+  //Looper igennem alle items med clasen .drag-item og kalder ovenstående
+  //funktion addEventsDragAndDrop() med argumentet (item)
+  var listItems = document.querySelectorAll('.drag-item');
+  [].forEach.call(listItems, function(item) {
+    addEventsDragAndDrop(item);
+  });
   
+
+  // Tilføj target events til container (targets)
   function addTargetEvents(target) {
     target.addEventListener('dragover', dragOver, false);
     target.addEventListener('dragenter', dragEnter, false);
@@ -123,16 +143,15 @@ function dragStart(e) {
     target.addEventListener('drop', dragDrop, false);
   }
   
+
+  //Looper igennem alle items med clasen .drag-item og kalder ovenstående
+  //funktion addTargetEvents() med argumentet (target)
   var targets = document.querySelectorAll('.drag-container');
   [].forEach.call(targets, function(target) {
     addTargetEvents(target);
   });
   
-  var listItems = document.querySelectorAll('.drag-item');
-  [].forEach.call(listItems, function(item) {
-    addEventsDragAndDrop(item);
-  });
-  
+ 
 
   
   
